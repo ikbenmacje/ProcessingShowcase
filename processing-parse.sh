@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
-PRC="/opt/processing-3.5.4/processing-java"
+#PRC="/opt/processing-3.5.4/processing-java"
+PRC=processing-java
 SRC_DIR="./src/pde"
 OPT=""
 
@@ -26,12 +27,12 @@ do
     #fi
     PDENAME=`basename $dir`
     # replace illegal methods
-    sed -i 's/frameRate(/\/\/frameRate(/g' $dir/$PDENAME.pde
-    sed -i 's/frameRate\ (/\/\/frameRate\ (/g' $dir/$PDENAME.pde
-    sed -i 's/surface./\/\/surface./g' $dir/$PDENAME.pde
-    sed -e '/new OscP5/s/^/\/\//g' -i $dir/$PDENAME.pde
-    OPT="--sketch=$dir --force --output=$dir-parsed  --build"
-    echo $PRC $OPT
+    sed -i '' 's/frameRate(/\/\/frameRate(/g' $dir/$PDENAME.pde
+    sed -i '' 's/frameRate\ (/\/\/frameRate\ (/g' $dir/$PDENAME.pde
+    sed -i '' 's/surface./\/\/surface./g' $dir/$PDENAME.pde
+    sed -e '/new OscP5/s/^/\/\//g' -i '' $dir/$PDENAME.pde
+    OPT="--sketch=`pwd`/$dir --force --output=`pwd`/$dir-parsed  --build"
+    echo `pwd`  $PRC $OPT
     $PRC $OPT
     echo "copying `basename $dir` sources to $SRC_DIR"
     cp $dir-parsed/source/$PDENAME.java $SRC_DIR/
@@ -42,10 +43,10 @@ do
     #echo "sketches.add(new SketchShit(\"$PDENAME.pde\", new $PDENAME()));"
     rm -rf $dir-parsed
     # undo replace illegal methods
-    sed -i 's/\/\/frameRate(/frameRate(/g' $dir/$PDENAME.pde
-    sed -i 's/\/\/frameRate\ (/frameRate\ (/g' $dir/$PDENAME.pde
-    sed -i 's/\/\/surface./surface./g' $dir/$PDENAME.pde
-    sed -e '/new OscP5/s/^\/\///g' -i $dir/$PDENAME.pde
+    sed -i '' 's/\/\/frameRate(/frameRate(/g' $dir/$PDENAME.pde
+    sed -i '' 's/\/\/frameRate\ (/frameRate\ (/g' $dir/$PDENAME.pde
+    sed -i '' 's/\/\/surface./surface./g' $dir/$PDENAME.pde
+    sed -e '/new OscP5/s/^\/\///g' -i '' $dir/$PDENAME.pde
     SRCCODE="$SRCCODE\nsketches.add(Arrays.asList(new SketchShit(\"$PDENAME.pde\", new $PDENAME())));"
     #SRCCODE="$SRCCODE\nnew SketchShit(\"$PDENAME.pde\", new $PDENAME())"
 done

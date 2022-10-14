@@ -35,7 +35,7 @@ public class ProcessingShowcase implements Runnable {
 		
 		String[] ta_args = {""};
 		PApplet.runSketch(ta_args, textApp);
-
+		
 		String wd = System.getProperty("user.dir");
 		System.out.println("Working Directory = " + wd);
 

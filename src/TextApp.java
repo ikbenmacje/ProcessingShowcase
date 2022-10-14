@@ -12,6 +12,8 @@ public class TextApp extends PApplet {
 	int bg = color(0);
 	int fg = color(130,255,150);
 	int fgb = color(0,100,20);
+
+	String cwd = "/Users/machiel/Work/Git/ProcessingShowcase/data/";
 	
 	public void setup()
 	{
@@ -20,7 +22,7 @@ public class TextApp extends PApplet {
 		PFont mono;
 		// The font "andalemo.ttf" must be located in the 
 		// current sketch's "data" directory to load successfully
-		mono = createFont("FreeMono.ttf", 30);
+		mono = createFont(cwd+"FreeMono.ttf", 30);
 		background(0);
 		textFont(mono, 20);
 		if (inv_color)

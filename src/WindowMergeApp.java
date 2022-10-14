@@ -56,10 +56,12 @@ public class WindowMergeApp extends PApplet {
     String[] lines = null;
     float totalLength = 0;
     int counter = 0;
+
+    String cwd = "/Users/machiel/Work/Git/ProcessingShowcase/data";
     
 	public void setup()
 	{
-		if (mono == null)  mono = createFont("static/RobotoMono-SemiBold.ttf", 64);
+		if (mono == null)  mono = createFont(cwd+"/"+"static/RobotoMono-SemiBold.ttf", 64);
 		if (oscP5 == null) oscP5 = new OscP5(this,6200);
 		if (lines == null) 
 		{
@@ -78,7 +80,11 @@ public class WindowMergeApp extends PApplet {
 			sketch.g = this.g;
 			sketch.setSize(this.width, this.height);
 			
-			sketch.sketchPath(this.sketchPath());
+			println("--> WindowsMergeApp: "+this.sketchPath());
+			sketch.calcSketchPath();
+			//sketch.sketchPath(this.sketchPath());
+			println("--> WindowsMergeApp:sketch "+sketch.sketchPath());
+
 			// is protected unfortunately so we can't use
 			// frameRate() methods
 			//sketch.surface = this.getSurface;
