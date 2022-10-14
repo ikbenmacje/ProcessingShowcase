@@ -1,18 +1,19 @@
 NAME="half_of_control"
-PRC=/opt/processing-3.5.4
-JFLAGS = -g -cp "./src:./src/pde:$(PRC)/core/library/core.jar:minim.jar:$(PRC)/core/library/jogl-all.jar:oscP5.jar:picocli-4.6.3.jar"
-JVMFLAGS = -cp "./src:./src/pde:$(PRC)/core/library/core.jar:$(PRC)/core/library/jogl-all.jar:$(PRC)/core/library/gluegen-rt.jar:oscP5.jar:picocli-4.6.3.jar"
+#PRC=/opt/processing-3.5.4
+PRC=/Applications/Processing3.5.app/Contents/Java
+JFLAGS = --release 8 -g -cp "./src:./src/pde:$(PRC)/core/library/core.jar:minim.jar:$(PRC)/core/library/jogl-all.jar:oscP5.jar:picocli-4.6.1.jar"
+JVMFLAGS = -cp "./src:./src/pde:$(PRC)/core/library/core.jar:$(PRC)/core/library/jogl-all.jar:$(PRC)/core/library/gluegen-rt.jar:oscP5.jar:picocli-4.6.1.jar"
 JC = javac #/usr/bin/javac
-JVM = $(PRC)/java/bin/java
+#JVM = $(PRC)/java/bin/java
+JVM = $(PRC)/../PlugIns/jdk1.8.0_202.jdk/Contents/Home/jre/bin/java
 SKETCH_DIRS = pde/*
-
 
 .SUFFIXES: .java .class
 
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
-CLASSES = src/*.java
+CLASSES := $(wildcard src/*.java)
 
 MAIN = ProcessingShowcase
 
