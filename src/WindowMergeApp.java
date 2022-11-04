@@ -275,8 +275,8 @@ public class WindowMergeApp extends PApplet {
 
 
 		//hack at position 0 (cannot be null)
-        sketches.add(Arrays.asList(new SketchShit("pattern28.pde", new pattern28())));
-        sketches.add(null); //1
+        sketches.add(Arrays.asList(new SketchShit("pattern0.pde", new pattern0())));
+		sketches.add(Arrays.asList(new SketchShit("pattern01.pde", new pattern01()))); //1
         sketches.add(null); //2
         sketches.add(null); //3
         sketches.add(null); //4
