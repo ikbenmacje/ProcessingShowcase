@@ -278,8 +278,8 @@ public class WindowMergeApp extends PApplet {
         sketches.add(Arrays.asList(new SketchShit("pattern0.pde", new pattern0())));
 		sketches.add(Arrays.asList(new SketchShit("pattern01.pde", new pattern01()))); //1
         sketches.add(null); //2
-        sketches.add(null); //3
-        sketches.add(null); //4
+        sketches.add(Arrays.asList(new SketchShit("pattern3.pde", new pattern3()))); //3
+        sketches.add(Arrays.asList(new SketchShit("pattern4.pde", new pattern4()))); //4
         sketches.add(Arrays.asList(new SketchShit("pattern5.pde", new pattern5())));
         sketches.add(Arrays.asList(new SketchShit("pattern6.pde", new pattern6())));
         sketches.add(Arrays.asList(new SketchShit("pattern7.pde", new pattern7())));
@@ -288,8 +288,8 @@ public class WindowMergeApp extends PApplet {
         // 10
         sketches.add(null); //10
         sketches.add(Arrays.asList(new SketchShit("pattern11_pepijn_rozer.pde", new pattern11_pepijn_rozer())));
-        sketches.add(null); //12
-        sketches.add(null); //13
+        sketches.add(Arrays.asList(new SketchShit("pattern26grid.pde", new pattern26grid())));
+        sketches.add(Arrays.asList(new SketchShit("pattern26grid.pde", new pattern26grid())));
         sketches.add(Arrays.asList(new SketchShit("pattern14_versie1.pde", new pattern14_versie1())));
         sketches.add(Arrays.asList(new SketchShit("pattern15.pde", new pattern15())));
         sketches.add(null); //16
@@ -297,26 +297,26 @@ public class WindowMergeApp extends PApplet {
         sketches.add(Arrays.asList(new SketchShit("pattern18.pde", new pattern18())));
         sketches.add(Arrays.asList(new SketchShit("pattern19.pde", new pattern19())));
         // 20 
-        sketches.add(Arrays.asList(new SketchShit("pattern_20.pde", new pattern_20())));
+        sketches.add(Arrays.asList(new SketchShit("pattern20.pde", new pattern20())));
         sketches.add(Arrays.asList(new SketchShit("pattern21.pde", new pattern21())));
         sketches.add(Arrays.asList(new SketchShit("pattern22.pde", new pattern22())));
-        sketches.add(Arrays.asList(new SketchShit("pattern29.pde", new pattern29()))); //23
+        sketches.add(Arrays.asList(new SketchShit("pattern29.pde", new pattern29())));
         sketches.add(Arrays.asList(new SketchShit("pattern24_pde.pde", new pattern24_pde())));
         sketches.add(Arrays.asList(new SketchShit("pattern25_nikola_fin.pde", new pattern25_nikola_fin())));
         sketches.add(Arrays.asList(new SketchShit("pattern26grid.pde", new pattern26grid())));
         sketches.add(Arrays.asList(new SketchShit("pattern_27.pde", new pattern_27())));
         sketches.add(Arrays.asList(new SketchShit("pattern28.pde", new pattern28())));
-        sketches.add(Arrays.asList(new SketchShit("pattern29_pde.pde", new pattern29_pde())));
+        sketches.add(Arrays.asList(new SketchShit("pattern29.pde", new pattern29())));
         sketches.add(Arrays.asList(new SketchShit("pattern_40.pde", new pattern_40()))); //30
         // 30 
         sketches.add(Arrays.asList(new SketchShit("paulinas_c_flight_demo_mika_de_cloe.pde", new paulinas_c_flight_demo_mika_de_cloe())));
-        sketches.add(null); //32
+        sketches.add(Arrays.asList(new SketchShit("pattern25_nikola_fin.pde", new pattern25_nikola_fin())));
         sketches.add(Arrays.asList(new SketchShit("paulinas_c_flight_demo_mika_de_cloe.pde", new paulinas_c_flight_demo_mika_de_cloe())));
         sketches.add(Arrays.asList(new SketchShit("pattern34.pde", new pattern34()))); //34
-        sketches.add(Arrays.asList(new SketchShit("pattern34.pde", new pattern34()))); //35
+        sketches.add(Arrays.asList(new SketchShit("pattern35.pde", new pattern34()))); //35
         sketches.add(Arrays.asList(new SketchShit("pattern_36.pde", new pattern_36())));
-        sketches.add(null); //37
-        sketches.add(null); //38
+        sketches.add(Arrays.asList(new SketchShit("pattern25_nikola_fin.pde", new pattern25_nikola_fin()))); //37
+        sketches.add(Arrays.asList(new SketchShit("pattern38.pde", new pattern7()))); //38
 
 	}
 	

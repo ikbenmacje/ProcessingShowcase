@@ -9,7 +9,6 @@ int xPos4=30, yPos4=502;
 void setup() {
   size(720, 480);
   background(255);
-  frameRate(10);
 }
 
 void draw() {

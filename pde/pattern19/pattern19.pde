@@ -1,8 +1,16 @@
+// Code by Kees
+// this was meant to be an audiowave... but I couldnt figure it out.
+// btw you need to play music in Gazebosc to see what happens.
+
 import netP5.*;
 import oscP5.*;
 
 OscP5 oscP5;
 
+int[] xvals;
+int[] yvals;
+int[] bvals;
+int count = 0;
 int songposition = 0;
 int patternnr = 0;
 int patternrow = 0;
@@ -26,95 +34,65 @@ String feedback_formatted = "";
 
 void setup()
 {
+  noSmooth();
+  xvals = new int[width];
+  yvals = new int[width];
+  bvals = new int[width];
   size(720, 480);
   frameRate(60);
   oscP5 = new OscP5(this,6200);
+}
+
+void draw() 
+{
+
+ background(0);
+ noStroke();
+  for (int i = 1; i < width; i++) { 
+    xvals[i-1] = xvals[i]; 
+    yvals[i-1] = yvals[i];
+    bvals[i-1] = bvals[i];
+  } 
+  // Add the new values to the end of the array 
+  xvals[width-1] = channel1note; 
+  yvals[width-1] = channel2note;
+  
+  if (mousePressed == true) {
+    bvals[width-1] = 0;
+  } else {
+    bvals[width-1] = height/3;
+  }
+  
+  fill(255);
   noStroke();
+  rect(0, height/3, width, height/3+1);
+
+  for(int i = 1; i < width; i++) {
+    // Draw the x-values
+    stroke(255);
+    point(i, map(xvals[i], 0, width, 0, height/3-1));
+    
+    // Draw the y-values
+    stroke(0);
+    point(i, height/3+yvals[i]/3);
+    
+    // Draw the mouse presses
+    stroke(255);
+    
+    // Points thickness
+    strokeWeight(8);
+    line(i, (2*height/3) + bvals[i], i, (2*height/3) + bvals[i-1]);}
+    
+    //morse text
+    fill(channel1note,channel2note);
+    textSize(40);
+    text("M O R S E",280,255);
+    
+    //flashes
+    fill(channel3note,channel4note);
+    rect(0,0,width,height);
+
 }
-
-int x;
-int y;
-int num = 100;
-float angle;
-int count = 0;
-int speed = 1;
-
-void hops(int xpos, int ypos)
-{
-  fill(255,0,0);
-  quad(xpos+sin(HALF_PI+frameCount*-0.15)*10, ypos+sin(HALF_PI+frameCount*-0.15)*10, xpos+100+sin(PI+frameCount*-0.15)*10, ypos+sin(PI+frameCount*-0.15)*10, xpos+100+sin(HALF_PI+PI+frameCount*-0.15)*10, ypos+100+sin(HALF_PI+PI+frameCount*-0.15)*10, xpos +sin(TWO_PI+frameCount*-0.15)*10, ypos+100+sin(TWO_PI+frameCount*-0.15)*10);
-}
-
-void glops(int xpos, int ypos)
-{
-  fill (0);
-  quad(5+xpos+sin(HALF_PI+frameCount*-0.15)*10, ypos+5+sin(HALF_PI+frameCount*-0.15)*10, xpos+95+sin(PI+frameCount*-0.15)*10, ypos+5+sin(PI+frameCount*-0.15)*10, xpos+95+sin(HALF_PI+PI+frameCount*-0.15)*10, ypos+95+sin(HALF_PI+PI+frameCount*-0.15)*10, xpos+5+sin(TWO_PI+frameCount*-0.15)*10, ypos+95+sin(TWO_PI+frameCount*-0.15)*10);
-}
-
-void rondje(int xpos, int ypos)
-{
-  fill(0);
-  if (patternrow % 8 == 0)
-  {
-    fill (255);
-  }
-  circle(xpos,ypos,50);
-}
-  
-
-void draw()
-{
-  background(0);
-  
-  
-  pushMatrix();
-  
-  x = 0;
-  fill(255,0,0);
-  for(int i = 0; i < num-1; i++) 
-  {
-    rect(x, 0, 1, 480);
-    x+= 10;
-  }
- 
-  popMatrix();
-  
-  x=0;
-  for (int i = 0; i <num-1; i++)
-  {
-    hops (x+20, height/2-50);
-    glops (x+20, height/2-50);
-    x+= 190;
-  }
-  
-   x=0;
-  for (int i = 0; i <num-1; i++)
-  {
-    hops (x+20, 50);
-    glops (x+20, 50);
-    x+= 190;
-  }
-  
-   x=0;
-  for (int i = 0; i <num-1; i++)
-  {
-    hops (x+20, height-150);
-    glops (x+20, height-150);
-    x+= 190;
-  }
-  
-  rondje (70,100);
-  rondje (450,100);
-  rondje (260,240);
-  rondje (70,380);
-  rondje (450,380);
-  rondje (640,240);
-  
-}
-
-
-
-
 
 void oscEvent(OscMessage message) 
 {
