@@ -51,11 +51,11 @@ void draw()
   }
   
     if (channel1instr != 0 ) {
-   t += 1.5;
+   t += 0.1;
   }
   
     if (channel3note != 0 ) {
-    t += 0.7;
+    t += 0.4;
   }
   
       if (channel2effect != 0 ) {

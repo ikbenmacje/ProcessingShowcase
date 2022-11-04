@@ -281,16 +281,16 @@ public class WindowMergeApp extends PApplet {
         sketches.add(null); //3
         sketches.add(null); //4
         sketches.add(Arrays.asList(new SketchShit("pattern5.pde", new pattern5())));
-        sketches.add(null); //6
+        sketches.add(Arrays.asList(new SketchShit("pattern6.pde", new pattern6())));
         sketches.add(Arrays.asList(new SketchShit("pattern7.pde", new pattern7())));
         sketches.add(null); //8
         sketches.add(Arrays.asList(new SketchShit("pattern9.pde", new pattern9())));
         // 10
         sketches.add(null); //10
-        sketches.add(Arrays.asList(new SketchShit("pattern11.pde", new pattern11())));
+        sketches.add(Arrays.asList(new SketchShit("pattern11_pepijn_rozer.pde", new pattern11_pepijn_rozer())));
         sketches.add(null); //12
         sketches.add(null); //13
-        sketches.add(Arrays.asList(new SketchShit("pattern14.pde", new pattern14())));
+        sketches.add(Arrays.asList(new SketchShit("pattern14_versie1.pde", new pattern14_versie1())));
         sketches.add(Arrays.asList(new SketchShit("pattern15.pde", new pattern15())));
         sketches.add(null); //16
         sketches.add(Arrays.asList(new SketchShit("blue_alien.pde", new blue_alien())));        // 17
@@ -301,12 +301,12 @@ public class WindowMergeApp extends PApplet {
         sketches.add(Arrays.asList(new SketchShit("pattern21.pde", new pattern21())));
         sketches.add(Arrays.asList(new SketchShit("pattern22.pde", new pattern22())));
         sketches.add(Arrays.asList(new SketchShit("pattern29.pde", new pattern29()))); //23
-        sketches.add(Arrays.asList(new SketchShit("pattern24.pde", new pattern24())));
-        sketches.add(Arrays.asList(new SketchShit("pattern25.pde", new pattern25())));
-        sketches.add(Arrays.asList(new SketchShit("pattern26.pde", new pattern26())));
+        sketches.add(Arrays.asList(new SketchShit("pattern24_pde.pde", new pattern24_pde())));
+        sketches.add(Arrays.asList(new SketchShit("pattern25_nikola_fin.pde", new pattern25_nikola_fin())));
+        sketches.add(Arrays.asList(new SketchShit("pattern26grid.pde", new pattern26grid())));
         sketches.add(Arrays.asList(new SketchShit("pattern_27.pde", new pattern_27())));
         sketches.add(Arrays.asList(new SketchShit("pattern28.pde", new pattern28())));
-        sketches.add(null); //29
+        sketches.add(Arrays.asList(new SketchShit("pattern29_pde.pde", new pattern29_pde())));
         sketches.add(Arrays.asList(new SketchShit("pattern_40.pde", new pattern_40()))); //30
         // 30 
         sketches.add(Arrays.asList(new SketchShit("paulinas_c_flight_demo_mika_de_cloe.pde", new paulinas_c_flight_demo_mika_de_cloe())));

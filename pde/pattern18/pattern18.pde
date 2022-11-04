@@ -47,13 +47,19 @@ void draw()
         }
       }
       if(channel3instr!=0){
-       ewidth=400;
-     }
-     else if (channel3instr==0){
-       ewidth=200;
-     }
+         ewidth=400;
+       }
+       else if (channel3instr==0){
+         ewidth=200;
+       }
+       if(channel2instr!=0){
+        eheight=400; 
+       }
+       else if(channel2instr==0){
+         eheight=200;
+       }
      fill(131, 88, 191);
-     circle(width/2,height/2,ewidth);
+     ellipse(width/2,height/2,ewidth,eheight);
      if(channel1instr!=0){
        tandenrijboven(0,0);
        tandenrijonder(0,0);
